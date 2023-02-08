@@ -6,28 +6,34 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class ValidLoginScnerio {
 
 	public static void main(String[] args) {
 	
+		
+		
+		
 		//Testing the valid login 
 		//using gecko driver
 		try {
-		System.setProperty("Webdriver.gecko.driver","C:\\Users\\Dell\\Downloads\\drivers\\geckodriver-v0.32.0-win-aarch64\\geckodriver.exe");
+		System.setProperty("Webdriver.gecko.driver",util.location);
 		WebDriver driver=new FirefoxDriver();
-		String baseUrl="http://www.demo.guru99.com/v4/";
-		driver.get(baseUrl);
+	
+	
+		driver.get(util.baseUrl);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		//locating webElement for entering userid
 		WebElement UserId=driver.findElement(By.name("uid"));
-		UserId.sendKeys("mngr476895");
+		
+		UserId.sendKeys(util.uid);
 		
 		//locating webElement for entering password
 		WebElement password=driver.findElement(By.name("password"));
-		password.sendKeys("AmErEqu");
+		password.sendKeys(util.pwd);
 		
 		
 		//finding login button
