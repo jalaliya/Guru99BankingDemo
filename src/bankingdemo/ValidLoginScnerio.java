@@ -16,7 +16,8 @@ public class ValidLoginScnerio {
 		try {
 		System.setProperty("Webdriver.gecko.driver","C:\\Users\\Dell\\Downloads\\drivers\\geckodriver-v0.32.0-win-aarch64\\geckodriver.exe");
 		WebDriver driver=new FirefoxDriver();
-		driver.get("http://www.demo.guru99.com/v4/");
+		String baseUrl="http://www.demo.guru99.com/v4/";
+		driver.get(baseUrl);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
